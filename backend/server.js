@@ -15,8 +15,8 @@ app.use(express.json());
 app.post('/api/save', async (req, res) => {
   try {
     console.log("req.body recibido:", req.body);
-    const { videoId, title, thumbnail } = req.body;
-    const savedVideo = new Video({ videoId, title, thumbnail });
+    const { videoId, title, thumbnail, channelTitle, channelId } = req.body;
+    const savedVideo = new Video({ videoId, title, thumbnail, channelTitle, channelId });
     await savedVideo.save();
     res.status(200).json({ message: 'Video guardado correctamente' });
   } catch (err) {
@@ -29,6 +29,7 @@ app.get('/api/savedVideos', async (req, res) => {
     try {
       const videos = await Video.find();
       res.status(200).json(videos);
+      console.log("Videos guardados:", videos);
 
     } catch (err) {
       console.error('Error al obtener los videos:', err);
@@ -53,6 +54,7 @@ app.get('/api/search', async (req, res) => {
   try {
     const results = await searchVideos(q, pageToken);
     res.json(results);
+    console.log("Resultados de búsqueda:", results);
   } catch (err) {
     res.status(500).json({ error: 'Error al buscar videos' });
   }

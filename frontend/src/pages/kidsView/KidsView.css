@@ -1,0 +1,29 @@
+.sugestions{
+    display: flex;
+}
+
+.thumbnail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    max-width: 180px;
+}
+
+.thumbnail img{
+    border-radius: 10px;
+}
+
+.channel-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.channel-info img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
