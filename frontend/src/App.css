@@ -8,58 +8,25 @@
     font-size: 13px;
 }
 
-.App{
-    height: 100vh;
-    width: 100vw;
+.app {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
+    height: 100vh;
+    background: url('./assets/background.jpg') no-repeat center center/cover;
+    
+  }
 
-.header{
-    padding: 15px 25px;
+  .main{
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.header h1{
-    font-size: 35px;
-    color: #FFDD0A;
-    font-family: 'Baloo 2';
-    text-shadow:
-    -2px -2px 0 #1B5CFF,
-     2px -2px 0 #1B5CFF,
-    -2px  2px 0 #1B5CFF,
-     2px  2px 0 #1B5CFF;
-}
-
-.main{
-    display: flex;
+    margin: 0px 50px 50px 50px;
+    padding: 0px 10px;
+    background-color: rgba(0, 0, 0, 0.308);
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 100%;
     align-items: center;
-    background-image: url('./assets/background.jpg');
     background-size: cover;
     background-position: center;
 }
 
-.sugestions{
-    background-color: rgba(0, 0, 0, 0.377);
-    height: 180px;
-    width: 90%;
-    border-radius: 10px;
-}
 
-.kidsView{
-    width: 100%;
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
-
-}

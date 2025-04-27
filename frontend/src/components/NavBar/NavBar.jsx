@@ -2,10 +2,8 @@ import './NavBar.css';
 import * as Icons from '../../assets/Icons';
 
 function NavBar({onSelect}) {
-    // const [activeComponent, setActiveComponent] = useState('home');
   return (
-    <div className='navBar'>
-        
+    <div className='bottom-navigation'>
         <div className='icon' onClick={() => onSelect("parent")}>
         <Icons.MdLibraryAdd className='icon' />
         </div>

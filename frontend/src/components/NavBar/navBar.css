@@ -1,16 +1,34 @@
-.navBar{
+/* .navBar{
     background-color: #194F9C;
     display: flex;
     justify-content: center;
     gap: 40px;
     padding: 10px;
     align-items: center;
-}
+} */
 
+.bottom-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: #194F9C;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+  }
+  
+  .bottom-navigation button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  
 .icon{
     cursor: pointer;
     color: white;
-    font-size: 40px;
+    font-size: 45px;
     display: flex;
     align-items: center;
     justify-content: center;

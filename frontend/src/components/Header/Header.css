@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }  
+  
+  .greeting {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    margin-left: 0.5rem;
+  }
+  

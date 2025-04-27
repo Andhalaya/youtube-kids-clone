@@ -1,0 +1,21 @@
+.search-bar {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
+    padding: 0 1rem;
+  }
+  
+  .search-bar input {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+  }
+  
+  .search-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
