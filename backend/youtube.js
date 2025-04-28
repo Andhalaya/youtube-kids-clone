@@ -31,7 +31,7 @@ async function searchVideos(query, pageToken = '') {
       part: 'snippet',
       q: query,
       type: 'video',
-      maxResults: 10,
+      maxResults: 8,
       pageToken: pageToken,
       order: 'relevance',
       key: API_KEY

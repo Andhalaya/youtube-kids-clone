@@ -49,6 +49,16 @@ function ParentView() {
         }
     };
 
+    const handleAddOrRemove = async (video) => {
+        const isAlreadySaved = savedVideos.some(v => v.videoId === video.videoId);
+
+        if (isAlreadySaved) {
+            await deleteVideo(video.videoId);
+        } else {
+            await saveVideo(video);
+        }
+    };
+
     return (
         <div className="parentView">
             <div className="search-section">
@@ -62,17 +72,23 @@ function ParentView() {
                     <button onClick={() => search(query)}>🔍</button>
                 </div>
             </div>
-            <div className="results-grid">
-                {results.map(video => (
-                    <VideoCard 
-                        key={video.videoId}
-                        video={video}
-                        onAction={() => saveVideo(video)}
-                        actionIcon="+"
-                    />
-                ))}
+            <div className='div'>
+              <div className="results-grid">
+                {results.map(video => {
+                    const isSaved = savedVideos.some(v => v.videoId === video.videoId);
+                    return (
+                        <VideoCard 
+                            key={video.videoId}
+                            video={video}
+                            isSaved={isSaved}
+                            onAddOrRemove={handleAddOrRemove}
+                        />
+                    );
+                })}
             </div>
-
+  
+            </div>
+            
             {nextPageToken && (
                 <div className="show-more">
                     <button onClick={() => search(query, nextPageToken)}>Show more</button>

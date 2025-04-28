@@ -24,7 +24,7 @@ function Home() {
         <h1>Mis videos</h1>
         <div className="videos-list">
         {videos.map(video => (
-          <VideoCard key={video._id} video={video} />
+          <VideoCard key={video._id} video={video} showAddButton={false}/>
         ))}
         </div>
     </div>

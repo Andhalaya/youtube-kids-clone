@@ -18,15 +18,16 @@
 
   .main{
     display: flex;
-    margin: 0px 50px 50px 50px;
-    padding: 0px 10px;
-    background-color: rgba(0, 0, 0, 0.308);
+    margin: 0px 50px 40px 50px;
+    padding: 35px;
+    background-color: rgba(0, 0, 0, 0.253);
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     align-items: center;
     background-size: cover;
     background-position: center;
+    overflow-y: scroll;
 }
 
 

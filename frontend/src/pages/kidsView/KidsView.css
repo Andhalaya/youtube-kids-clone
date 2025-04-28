@@ -1,14 +1,21 @@
-.sugestions{
+.kidsView h2{
+color: white;
+font-size: 15px;
+}
+
+.suggestions{
     display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    margin-top: 20px;
 }
 
 .thumbnail{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: white;
     max-width: 180px;
+    gap: 10px;
 }
 
 .thumbnail img{

@@ -1,5 +1,17 @@
 .home h1{
-font-family: 'Baloo 2';
-font-size: 35px;
-color: rgb(16, 16, 49);
+font-size: 20px;
+color: rgb(255, 255, 255);
+margin-bottom: 20px;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.videos-list{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
 }
