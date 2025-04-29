@@ -3,35 +3,30 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import VideoCard from '../../components/video/VideoCard';
 
-function Home() {
+function Home({ onVideoSelect }) {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     async function fetchVideos() {
-      try {
-        const res = await axios.get('https://youtube-kids-clone.onrender.com/api/savedVideos');
-        setVideos(res.data);
-      } catch (error) {
-        console.error('Error cargando los videos:', error);
-      }
+      const res = await axios.get('https://youtube-kids-clone.onrender.com/api/savedVideos');
+      setVideos(res.data);
     }
-
     fetchVideos();
   }, []);
 
   return (
     <div className='home'>
       <h1>Mis videos</h1>
-      <div className='div'>
-        <div className="videos-list">
-          {videos.map(video => (
-            <VideoCard key={video._id} video={video} showAddButton={false} />
-          ))}
-        </div>
+      <div className='videos-list'>
+        {videos.map(video => (
+          <div onClick={() => onVideoSelect(video)} key={video._id}>
+            <VideoCard video={video} showAddButton={false} />
+          </div>
+        ))}
       </div>
-
     </div>
-  )
+  );
 }
+
 
 export default Home

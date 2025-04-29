@@ -2,40 +2,41 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './KidsView.css';
 
-function KidsView() {
+function KidsView({ currentVideo }) {
   const [videos, setVideos] = useState([]);
-  const [currentVideo, setCurrentVideo] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     const fetch = async () => {
-      try {
-        const res = await axios.get('https://youtube-kids-clone.onrender.com/api/savedVideos');
-        setVideos(res.data);
-        if (res.data.length > 0) {
-          setCurrentVideo(res.data[0]); 
-        }
-      } catch (error) {
-        console.error('Error cargando videos', error);
+      const res = await axios.get('https://youtube-kids-clone.onrender.com/api/savedVideos');
+      setVideos(res.data);
+      if (!currentVideo && res.data.length > 0) {
+        setSelectedVideo(res.data[0]);
       }
     };
     fetch();
   }, []);
 
+  useEffect(() => {
+    if (currentVideo) {
+      setSelectedVideo(currentVideo);
+    }
+  }, [currentVideo]);
+
   const handleSelectVideo = (video) => {
-    setCurrentVideo(video);
+    setSelectedVideo(video);
   };
 
   return (
     <div className="kidsView">
-      {currentVideo && (
+      {selectedVideo && (
         <iframe
-          width="880"
-          height="450"
-          src={`https://www.youtube.com/embed/${currentVideo.videoId}?rel=0&modestbranding=1&controls=1&showinfo=0&autoplay=1`}
+          src={`https://www.youtube.com/embed/${selectedVideo.videoId}?rel=0&modestbranding=1&controls=1&showinfo=0&autoplay=1`}
           allowFullScreen
-          frameBorder="0"
+          width="90%"
+          height="70%"
           allow="encrypted-media"
-          title={currentVideo.title}
+          title={selectedVideo.title}
           style={{ borderRadius: 15, border: 'none' }}
         ></iframe>
       )}
