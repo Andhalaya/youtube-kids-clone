@@ -57,6 +57,31 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
+// Ruta para guardar el historial de búsqueda
+app.post('/api/history/add', async (req, res) => {
+  const { userId, query } = req.body;
+
+  try {
+    const newSearchHistory = new SearchHistory({ userId, query });
+    await newSearchHistory.save();
+    res.status(200).json({ message: 'Búsqueda guardada en el historial' });
+  } catch (err) {
+    res.status(500).json({ error: 'Error al guardar el historial de búsqueda', details: err.message });
+  }
+});
+
+// Ruta para obtener el historial de búsqueda de un usuario
+app.get('/api/history/:userId', async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const history = await SearchHistory.find({ userId }).sort({ timestamp: -1 }).limit(5); // Limitar a 5 búsquedas
+    res.status(200).json(history);
+  } catch (err) {
+    res.status(500).json({ error: 'Error al obtener el historial de búsqueda', details: err.message });
+  }
+});
+
 app.listen(3001, () => {
   console.log('Servidor corriendo en el puerto 3001');
 });

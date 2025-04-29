@@ -6,6 +6,7 @@ const videoSchema = new mongoose.Schema({
   thumbnail: { type: String, required: true },
   channelId: { type: String, required: true },
   channelTitle: { type: String, required: true },
+  
 });
 
 const Video = mongoose.model('Video', videoSchema);

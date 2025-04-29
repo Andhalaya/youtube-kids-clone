@@ -14,13 +14,30 @@ function Home({ onVideoSelect }) {
     fetchVideos();
   }, []);
 
+  const deleteVideo = async (videoId) => {
+    try {
+        await axios.delete(`https://youtube-kids-clone.onrender.com/api/delete/${videoId}`);
+        setSavedVideos(prev => prev.filter(video => video.videoId !== videoId));
+        alert('Video eliminado');
+    } catch (err) {
+        console.error("Error al eliminar el video", err);
+    }
+};
+
+const handleAddOrRemove = async (video) => {
+    await deleteVideo(video.videoId); 
+};
+
   return (
     <div className='home'>
       <h1>Mis videos</h1>
       <div className='videos-list'>
         {videos.map(video => (
           <div onClick={() => onVideoSelect(video)} key={video._id}>
-            <VideoCard video={video} showAddButton={false} />
+            <VideoCard 
+            video={video} 
+            onAddOrRemove={handleAddOrRemove} 
+            />
           </div>
         ))}
       </div>
