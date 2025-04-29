@@ -10,11 +10,10 @@
 .bottom-navigation {
     display: flex;
     justify-content: center;
-    align-items: start;
     gap: 40px;
     background: #194F9C;
     padding: 1rem;
-    height: 7svh;
+    height: 8svh;
   }
   
   .bottom-navigation button {

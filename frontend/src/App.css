@@ -8,11 +8,11 @@
     font-size: 13px;
 }
 
-html, body {
+/* html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-  }
+  } */
 
 .app {
     height: 100svh;
@@ -21,7 +21,7 @@ html, body {
 }
 
 .main {
-    height: 86svh;
+    height: 85svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
