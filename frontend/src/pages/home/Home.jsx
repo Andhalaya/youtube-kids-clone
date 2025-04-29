@@ -9,7 +9,7 @@ function Home() {
   useEffect(() => {
     async function fetchVideos() {
       try {
-        const res = await axios.get('http://localhost:3001/api/savedVideos');
+        const res = await axios.get('https://youtube-kids-clone.onrender.com/api/savedVideos');
         setVideos(res.data);
       } catch (error) {
         console.error('Error cargando los videos:', error);

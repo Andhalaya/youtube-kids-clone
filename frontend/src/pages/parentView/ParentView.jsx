@@ -12,7 +12,7 @@ function ParentView() {
     useEffect(() => {
         const fetchSavedVideos = async () => {
             try {
-                const res = await axios.get('http://localhost:3001/api/savedVideos');
+                const res = await axios.get('https://youtube-kids-clone.onrender.com/api/savedVideos');
                 setSavedVideos(res.data);
             } catch (err) {
                 console.error("Error al cargar los videos guardados", err);
@@ -22,7 +22,7 @@ function ParentView() {
     }, []);
 
     const search = async (query, pageToken = '') => {
-        const res = await axios.get(`http://localhost:3001/api/search`, {
+        const res = await axios.get(`https://youtube-kids-clone.onrender.com/api/search`, {
             params: { q: query, pageToken }
         });
         setResults(prev => [...prev, ...res.data.videos]);
@@ -31,7 +31,7 @@ function ParentView() {
 
     const saveVideo = async (video) => {
         try {
-            await axios.post('http://localhost:3001/api/save', video);
+            await axios.post('https://youtube-kids-clone.onrender.com/api/save', video);
             setSavedVideos(prev => [...prev, video]);
             alert('Video guardado');
         } catch (err) {
@@ -41,7 +41,7 @@ function ParentView() {
 
     const deleteVideo = async (videoId) => {
         try {
-            await axios.delete(`http://localhost:3001/api/delete/${videoId}`);
+            await axios.delete(`https://youtube-kids-clone.onrender.com/api/delete/${videoId}`);
             setSavedVideos(prev => prev.filter(video => video.videoId !== videoId));
             alert('Video eliminado');
         } catch (err) {
