@@ -1,4 +1,4 @@
-import './NavBar.css';
+import './navBar.css';
 import * as Icons from '../../assets/Icons';
 
 function NavBar({onSelect}) {
