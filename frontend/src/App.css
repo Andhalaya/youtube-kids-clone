@@ -29,18 +29,3 @@ html, body {
     background-size: cover;
     background-position: center;
 }
-
-@media  (max-width: 900px) {
-    .main {
-        height: 78vh;
-    }
-
-    .header {
-        height: 7vh;
-    }
-
-    .bottom-navigation{
-        height: 7vh;
-    }
-    
-}
