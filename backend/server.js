@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const Video = require('./models/videoModel');
+const SearchHistory = require('./models/searchHistory');
 const cors = require('cors');
 const { searchVideos } = require('./youtube'); 
 const { dbConnection } = require('./config/db');
