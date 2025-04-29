@@ -39,6 +39,7 @@ function ParentView() {
 
     // Función para realizar la búsqueda
     const search = async (query, pageToken = '') => {
+        setResults([]);
         const res = await axios.get(`https://youtube-kids-clone.onrender.com/api/search`, {
             params: { q: query, pageToken }
         });
@@ -54,6 +55,7 @@ function ParentView() {
 
         // Actualizar el estado local del historial de búsqueda
         setSearchHistory(prev => [query, ...prev.filter(item => item !== query)].slice(0, 5)); // Limitar a 5 búsquedas
+        
     };
 
     // Guardar un video
