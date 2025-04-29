@@ -33,7 +33,7 @@ async function searchVideos(query, pageToken = '') {
       type: 'video',
       maxResults: 8,
       pageToken: pageToken,
-      order: 'relevance',
+      order: 'viewCount',
       key: API_KEY
     }
   });

@@ -29,8 +29,6 @@ app.get('/api/savedVideos', async (req, res) => {
     try {
       const videos = await Video.find();
       res.status(200).json(videos);
-      console.log("Videos guardados:", videos);
-
     } catch (err) {
       console.error('Error al obtener los videos:', err);
       res.status(500).json({ error: 'Error al obtener los videos', details: err.message });
@@ -54,7 +52,6 @@ app.get('/api/search', async (req, res) => {
   try {
     const results = await searchVideos(q, pageToken);
     res.json(results);
-    console.log("Resultados de búsqueda:", results);
   } catch (err) {
     res.status(500).json({ error: 'Error al buscar videos' });
   }

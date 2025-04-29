@@ -1,7 +1,6 @@
 .video-card {
     display: flex;
     flex-direction: column;
-    align-items: left;
     position: relative;
   }
 
@@ -12,7 +11,7 @@
   .add-button {
     position: absolute;
     top: -8px;
-    right: 8px;
+    right: -8px;
     background: #008cff;
     border: none;
     border-radius: 50%;
@@ -29,7 +28,6 @@
     width: 100%;
     border-radius: 12px;
     object-fit: cover;
-    width: 224px;
     max-height: 168px;
   }
   

@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin: 0px 30px;
+    height: 7vh;
+    padding: 20px 20px 0px 20px;
   }  
 
   .logo{

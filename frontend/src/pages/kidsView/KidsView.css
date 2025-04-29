@@ -3,11 +3,14 @@ color: white;
 font-size: 15px;
 }
 
+
 .suggestions{
     display: flex;
     gap: 20px;
     overflow-x: auto;
     margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.285);
+    padding: 20px;
 }
 
 .thumbnail{

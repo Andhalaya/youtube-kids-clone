@@ -9,7 +9,7 @@ function Home() {
   useEffect(() => {
     async function fetchVideos() {
       try {
-        const res = await axios.get('http://localhost:3001/api/savedVideos'); 
+        const res = await axios.get('http://localhost:3001/api/savedVideos');
         setVideos(res.data);
       } catch (error) {
         console.error('Error cargando los videos:', error);
@@ -21,12 +21,15 @@ function Home() {
 
   return (
     <div className='home'>
-        <h1>Mis videos</h1>
+      <h1>Mis videos</h1>
+      <div className='div'>
         <div className="videos-list">
-        {videos.map(video => (
-          <VideoCard key={video._id} video={video} showAddButton={false}/>
-        ))}
+          {videos.map(video => (
+            <VideoCard key={video._id} video={video} showAddButton={false} />
+          ))}
         </div>
+      </div>
+
     </div>
   )
 }
